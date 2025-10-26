@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kuliah - Personal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Jadwal Kuliah</h1>
+            <p>Kelola jadwal kuliah Anda dengan mudah</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Form Section -->
+            <div class="card">
+                <h2>Tambah Jadwal</h2>
+                <div id="alert-container"></div>
+                <form id="scheduleForm">
+                    <div class="form-group">
+                        <label for="courseName">Nama Mata Kuliah</label>
+                        <input type="text" id="courseName" placeholder="Contoh: Pemrograman Web" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseCode">Kode Mata Kuliah</label>
+                        <input type="text" id="courseCode" placeholder="Contoh: CS101" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="day">Hari</label>
+                        <select id="day" required>
+                            <option value="">Pilih Hari</option>
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startTime">Jam Mulai</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endTime">Jam Selesai</label>
+                        <input type="time" id="endTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="room">Ruangan</label>
+                        <input type="text" id="room" placeholder="Contoh: Ruang 101" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lecturer">Dosen Pengampu</label>
+                        <input type="text" id="lecturer" placeholder="Nama dosen" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Catatan</label>
+                        <textarea id="notes" placeholder="Catatan tambahan (opsional)"></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary">Simpan Jadwal</button>
+                        <button type="reset" class="btn-secondary">Bersihkan</button>
+                    </div>
+                </form>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalSchedules">0</div>
+                        <div class="stat-label">Total Jadwal</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="todaySchedules">0</div>
+                        <div class="stat-label">Hari Ini</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule List Section -->
+            <div class="card">
+                <h2>Daftar Jadwal</h2>
+                <div id="scheduleContainer" class="schedule-list">
+                    <div class="empty-state">
+                        <p>Belum ada jadwal. Tambahkan jadwal baru untuk memulai!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
